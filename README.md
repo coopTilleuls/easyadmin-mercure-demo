@@ -1,11 +1,11 @@
 # EasyAdmin / Mercure demo
 
-This demo application has been generated from the MicroSymfony template.
-
+This demo application has been generated from the [MicroSymfony](https://github.com/strangebuzz/MicroSymfony)
+template.
 
 ## Installation & first run 🚀
 
-    composer install --prefer-source
+    composer install
     make start
 
 Then open [https://127.0.0.1:8000](https://127.0.0.1:8000)

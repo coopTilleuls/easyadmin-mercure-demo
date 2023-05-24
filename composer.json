@@ -26,6 +26,7 @@
         "symfony/framework-bundle": "6.3.*",
         "symfony/intl": "6.3.*",
         "symfony/maker-bundle": "^1.48",
+        "symfony/mercure-bundle": "^0.3.7",
         "symfony/monolog-bundle": "^3.8",
         "symfony/runtime": "6.3.*",
         "symfony/twig-bundle": "6.3.*",
