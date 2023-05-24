@@ -25,7 +25,6 @@
         "symfony/form": "6.3.*",
         "symfony/framework-bundle": "6.3.*",
         "symfony/intl": "6.3.*",
-        "symfony/maker-bundle": "^1.48",
         "symfony/mercure-bundle": "^0.3.7",
         "symfony/monolog-bundle": "^3.8",
         "symfony/runtime": "6.3.*",
@@ -44,6 +43,7 @@
         "phpunit/phpunit": "^9.0",
         "symfony/browser-kit": "6.3.*",
         "symfony/css-selector": "6.3.*",
+        "symfony/maker-bundle": "^1.48",
         "symfony/phpunit-bridge": "^6.3",
         "symfony/stopwatch": "6.3.*",
         "symfony/web-profiler-bundle": "6.3.*"
