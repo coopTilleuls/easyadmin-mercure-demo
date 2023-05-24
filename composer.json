@@ -8,7 +8,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/slim/EasyAdminBundle"
+            "url": "https://github.com/coopTilleuls/EasyAdminBundle"
         }
     ],
     "require": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8fb153018c02009a3e603ce884fb64b5",
+    "content-hash": "b68a5627cb43245c9ff60ba922fbf7df",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -1208,13 +1208,13 @@
             "version": "dev-slim",
             "source": {
                 "type": "git",
-                "url": "https://github.com/slim/EasyAdminBundle.git",
-                "reference": "34572a84302820720746213faf8704f684ab9ab8"
+                "url": "https://github.com/coopTilleuls/EasyAdminBundle.git",
+                "reference": "a5c3a3aa672f8eb352c919bb453e0e466639ba6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/slim/EasyAdminBundle/zipball/34572a84302820720746213faf8704f684ab9ab8",
-                "reference": "34572a84302820720746213faf8704f684ab9ab8",
+                "url": "https://api.github.com/repos/coopTilleuls/EasyAdminBundle/zipball/a5c3a3aa672f8eb352c919bb453e0e466639ba6b",
+                "reference": "a5c3a3aa672f8eb352c919bb453e0e466639ba6b",
                 "shasum": ""
             },
             "require": {
@@ -1253,7 +1253,9 @@
                 "psr/log": "^1.0",
                 "symfony/browser-kit": "^5.4|^6.0",
                 "symfony/css-selector": "^5.4|^6.0",
+                "symfony/debug-bundle": "^5.4|^6.0",
                 "symfony/dom-crawler": "^5.4|^6.0",
+                "symfony/mercure": "^0.6.3",
                 "symfony/phpunit-bridge": "^5.4|^6.0"
             },
             "suggest": {
@@ -1293,7 +1295,7 @@
                 "generator"
             ],
             "support": {
-                "source": "https://github.com/slim/EasyAdminBundle/tree/slim"
+                "source": "https://github.com/coopTilleuls/EasyAdminBundle/tree/slim"
             },
             "funding": [
                 {
@@ -1301,7 +1303,7 @@
                     "url": "https://github.com/javiereguiluz"
                 }
             ],
-            "time": "2023-05-24T07:30:58+00:00"
+            "time": "2023-05-24T12:53:23+00:00"
         },
         {
             "name": "lcobucci/jwt",
