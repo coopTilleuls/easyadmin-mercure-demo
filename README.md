@@ -1,8 +1,21 @@
 # EasyAdmin / Mercure demo
 
+This demo application has been generated from the MicroSymfony template.
 
 
-## Todo 
+## Installation & first run 🚀
+
+    composer install --prefer-source
+    make start
+
+Then open [https://127.0.0.1:8000](https://127.0.0.1:8000)
+
+The port can change if 8000 is already used.
+
+
+## Todo
+
+* les propriétés doivent être en anglais
 
 
 ## To try/test
@@ -21,16 +34,6 @@
 * [Twig 3](https://twig.symfony.com)
 * [PHPUnit 9.5](https://phpunit.de)
 * The classless [BareCSS](http://barecss.com) CSS framework 
-
-
-## Installation & first run 🚀
-
-    composer install
-    make start
-
-Then open [https://127.0.0.1:8000](https://127.0.0.1:8000)
-
-The port can change if 8000 is already used.
 
 
 ## Dev-tools ✨

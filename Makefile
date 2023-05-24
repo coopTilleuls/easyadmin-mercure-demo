@@ -9,7 +9,15 @@ help: ## Outputs this help screen
 
 ## —— Symfony binary 💻 ————————————————————————————————————————————————————————
 start: ## Serve the application with the Symfony binary
-	@symfony serve --daemon
+	docker compose up -d
+	$(MAKE) db-init
+	symfony serve --daemon --no-tls
+
+db-init: ## Initialize the database if
+	bin/console doctrine:database:drop --if-exists --force
+	bin/console doctrine:database:create --if-not-exists
+	bin/console doctrine:schema:create
+	bin/console doctrine:schema:validate
 
 stop: ## Stop the web server
 	@symfony server:stop
@@ -28,7 +36,8 @@ cov-report: ## Open the PHPUnit code coverage report (var/coverage/index.html)
 
 ## —— Coding standards ✨ ——————————————————————————————————————————————————————
 stan: ## Run PHPStan
-	@vendor/bin/phpstan analyse -c phpstan.neon --memory-limit 1G -vvv --xdebug
+	#@vendor/bin/phpstan analyse -c phpstan.neon --memory-limit 1G -vvv --xdebug
+	@vendor/bin/phpstan analyse -c phpstan.neon --memory-limit 1G -vvv
 
 fix-php: ## Fix PHP files with php-cs-fixer (ignore PHP 8.2 warning)
 	@PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --allow-risky=yes
