@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section>
+        <card>
+            <h5>Oops! An Error {{ status_code }} occured!</h5>
+            <hr>
+            <p>Sorry, but an error <b>{{ status_code|status_text }}</b> ({{ status_code }}) occured.</p>
+            <p txt="c">
+                <a href="/">Homepage</a>
+            </p>
+
+            <hr/>
+
+            <grid>
+                <div col="1/3"></div>
+                <div col="1/3">
+                    <img src="https://frankenphp.dev/img/elephant_footer.svg" />
+                    <p txt="c">
+                        Logo by <a target="_blank" href="https://frankenphp.dev/">FrankenPHP</a>
+                    </p>
+                </div>
+                <div col="1/3"></div>
+            </grid>
+        </card>
+    </section>
+{% endblock %}

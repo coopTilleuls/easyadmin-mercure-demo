@@ -1,0 +1,12 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+# https://symfony.com/doc/current/templates.html#rendering-a-template-directly-from-a-route
+app_stimulus:
+    path: /stimulus
+    defaults:
+        _controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+        template: stimulus.html.twig

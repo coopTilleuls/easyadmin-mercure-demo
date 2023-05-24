@@ -1,0 +1,69 @@
+name: Symfony
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  # run tests (critical)
+  symfony-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        coverage: xdebug
+    - uses: actions/checkout@v3
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    - name: Execute tests via PHPUnit
+      run: vendor/bin/simple-phpunit
+
+  # run all lint/cs checks (non critical)
+  symfony-lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.1'
+        tools: cs2pr
+    - uses: actions/checkout@v3
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+    - name: Install Dependencies
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+    # native Symfony lints
+    - name: Lint the DI container
+      run: bin/console lint:container
+    - name: Lint Twig templates
+      run: bin/console lint:twig
+    - name: Lint Yaml files
+      run: bin/console lint:yaml config/
+
+    # vendors
+    - name: php-cs-fixer
+      run: vendor/bin/php-cs-fixer fix --allow-risky=yes --dry-run --format=checkstyle | cs2pr
+    - name: PHPStan
+      run: | 
+        bin/console about --env=dev
+        vendor/bin/phpstan analyse -c phpstan.neon --memory-limit 1G -vvv
