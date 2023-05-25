@@ -9,7 +9,7 @@ help: ## Outputs this help screen
 
 ## —— Symfony binary 💻 ————————————————————————————————————————————————————————
 start: ## Serve the application with the Symfony binary
-	docker compose up -d
+	docker compose up --wait
 	$(MAKE) db-init
 	symfony serve --daemon --no-tls
 

@@ -21,32 +21,19 @@ template.
 
 ## Installation & first run 🚀
 
-    docker compose up -d
-
-Get the port of the database service:
-
-    docker ps
-    CONTAINER ID   IMAGE                COMMAND                  CREATED        STATUS        PORTS                                      NAMES
-    7d92568b7dfa   dunglas/mercure      "/usr/bin/caddy run …"   22 hours ago   Up 22 hours   443/tcp, 2019/tcp, 0.0.0.0:59908->80/tcp   easyadmin-mercure-demo-mercure-1
-    5a7d735b92a5   postgres:15-alpine   "docker-entrypoint.s…"   23 hours ago   Up 23 hours   0.0.0.0:59629->5432/tcp                    easyadmin-mercure-demo-database-1
-    
-    docker port 5a7d735b92a5
-    5432/tcp -> 0.0.0.0:59629
-
-So the local public port of the Docker database service is `59269`.
-
-In a `env.local` file at the root of the project file, put:
-
-    DATABASE_URL="postgresql://app:!ChangeMe!@127.0.0.1:59629/app?serverVersion=15&charset=utf8"
-
-You can now run:
+The `5432` port must be free fro PostgreSQL.
 
     composer install
     make start
 
 Then open [https://127.0.0.1:8000](https://127.0.0.1:8000)
 
-The port can change if 8000 is already used.
+The port can change if `8000` is already used.
+
+
+## Stop the Docker containers and the web server
+
+    make stop
 
 
 ## Todo
