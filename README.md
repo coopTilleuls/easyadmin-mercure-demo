@@ -12,6 +12,21 @@ This demo application has been generated from the [MicroSymfony](https://github.
 template.
 
 
+### Manual update
+
+You can also manually emit notifications in your application check out
+[AppController](./src/Controller/AppController.php):
+
+      $topic = $this->adminUrlGenerator->setController(Article::class)
+              ->unsetAllExcept('crudControllerFqcn')->generateUrl();
+      $update = new Update(
+          $topic,
+          (string) json_encode(['id' => 1]),
+      );
+
+Of course you should rely on an actual article instance in this case.
+
+
 ## Requirements
 
 * Docker
@@ -21,7 +36,7 @@ template.
 
 ## Installation & first run 🚀
 
-The `5432` port must be free fro PostgreSQL.
+The `5432` port must be free for PostgreSQL.
 
     composer install
     make start
@@ -31,7 +46,14 @@ Then open [https://127.0.0.1:8000](https://127.0.0.1:8000)
 The port can change if `8000` is already used.
 
 
-## Stop the Docker containers and the web server
+## Reset
+
+To reinitialize the database you can run:
+
+    make db-init
+
+
+## Stop the Docker containers and the Symfony web server
 
     make stop
 
