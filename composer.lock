@@ -1209,12 +1209,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/coopTilleuls/EasyAdminBundle.git",
-                "reference": "a5c3a3aa672f8eb352c919bb453e0e466639ba6b"
+                "reference": "d1430a503f11a8314a5c5dca387d1929daf4d9ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coopTilleuls/EasyAdminBundle/zipball/a5c3a3aa672f8eb352c919bb453e0e466639ba6b",
-                "reference": "a5c3a3aa672f8eb352c919bb453e0e466639ba6b",
+                "url": "https://api.github.com/repos/coopTilleuls/EasyAdminBundle/zipball/d1430a503f11a8314a5c5dca387d1929daf4d9ab",
+                "reference": "d1430a503f11a8314a5c5dca387d1929daf4d9ab",
                 "shasum": ""
             },
             "require": {
@@ -1259,7 +1259,7 @@
                 "symfony/phpunit-bridge": "^5.4|^6.0"
             },
             "suggest": {
-                "symfony/mercure": "^0.6.3"
+                "symfony/mercure-bundle": "To enable live updates support"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -1303,7 +1303,7 @@
                     "url": "https://github.com/javiereguiluz"
                 }
             ],
-            "time": "2023-05-24T12:53:23+00:00"
+            "time": "2023-05-25T15:23:31+00:00"
         },
         {
             "name": "lcobucci/jwt",
