@@ -39,15 +39,15 @@ final class AppController extends AbstractController
         // of a their article and an administrator it currently editing the article
         // for exemple this code could be used in a Doctrine listener when an entity
         // get updated.
-        $topic = $this->adminUrlGenerator->setController(Article::class)
-                ->unsetAllExcept('crudControllerFqcn')->generateUrl();
-        /** @noinspection JsonEncodingApiUsageInspection */
-        $update = new Update(
-            $topic,
-            (string) json_encode(['id' => 1]),
-        );
-
-        $this->hub->publish($update);
+        //        $topic = $this->adminUrlGenerator->setController(Article::class)
+        //                ->unsetAllExcept('crudControllerFqcn')->generateUrl();
+        //        /** @noinspection JsonEncodingApiUsageInspection */
+        //        $update = new Update(
+        //            $topic,
+        //            (string) json_encode(['id' => 1]),
+        //        );
+        //
+        //        $this->hub->publish($update);
 
         $readme = file_get_contents(__DIR__.'/../../README.md');
 
