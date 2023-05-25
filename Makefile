@@ -1,7 +1,7 @@
 SHELL = sh
 .DEFAULT_GOAL = help
 
-## —— 🎶 The MicroSymfony Makefile 🎶 ——————————————————————————————————————————
+## —— 🎶 The EasyAdmin+Mercure Makefile 🎶 ——————————————————————————————————————————
 help: ## Outputs this help screen
 	@grep -E '(^[a-zA-Z0-9_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}{printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
 .PHONY: help start stop test coverage cov-report stan fix-php cs ci
@@ -20,6 +20,7 @@ db-init: ## Initialize the database if
 	bin/console doctrine:schema:validate
 
 stop: ## Stop the web server
+	docker compose down --remove-orphans
 	@symfony server:stop
 
 
