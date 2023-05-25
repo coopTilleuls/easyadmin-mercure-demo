@@ -19,13 +19,13 @@ class Article
     private ?string $code = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $designation = null;
+    private ?string $description = null;
 
     #[ORM\Column]
-    private ?int $quantite = null;
+    private ?int $quantity = null;
 
     #[ORM\Column]
-    private ?float $prix = null;
+    private ?float $price = null;
 
     public function getId(): ?int
     {
@@ -44,38 +44,38 @@ class Article
         return $this;
     }
 
-    public function getDesignation(): ?string
+    public function getDescription(): ?string
     {
-        return $this->designation;
+        return $this->description;
     }
 
-    public function setDesignation(string $designation): self
+    public function setDescription(string $description): self
     {
-        $this->designation = $designation;
+        $this->description = $description;
 
         return $this;
     }
 
-    public function getQuantite(): ?int
+    public function getQuantity(): ?int
     {
-        return $this->quantite;
+        return $this->quantity;
     }
 
-    public function setQuantite(int $quantite): self
+    public function setQuantity(int $quantity): self
     {
-        $this->quantite = $quantite;
+        $this->quantity = $quantity;
 
         return $this;
     }
 
-    public function getPrix(): ?float
+    public function getPrice(): ?float
     {
-        return $this->prix;
+        return $this->price;
     }
 
-    public function setPrix(float $prix): self
+    public function setPrice(float $price): self
     {
-        $this->prix = $prix;
+        $this->price = $price;
 
         return $this;
     }
