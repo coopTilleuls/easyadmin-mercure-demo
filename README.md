@@ -1,5 +1,13 @@
 # EasyAdmin / Mercure demo
 
+## Features
+
+* While I edit an entity which gets updated on the server by another user, I get
+  a notification and a button for updating the page I'm looking at.
+* While I am looking at an entity list, if a an entity on the page gets updated
+  on the server by another user, I get a notification, a button for updating the page I'm looking
+  at and the outdated entity gets highlighted.
+
 This demo application has been generated from the [MicroSymfony](https://github.com/strangebuzz/MicroSymfony)
 template.
 
@@ -27,7 +35,7 @@ Get the port of the database service:
 
 So the local public port of the Docker database service is `59269`.
 
-In a `env.local` at the root of the project file, put:
+In a `env.local` file at the root of the project file, put:
 
     DATABASE_URL="postgresql://app:!ChangeMe!@127.0.0.1:59629/app?serverVersion=15&charset=utf8"
 
