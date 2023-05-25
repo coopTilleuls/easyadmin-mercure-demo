@@ -15,7 +15,7 @@ services:
       # - ./docker/db/data:/var/lib/postgresql/data:rw
     ports:
       - "5432"
-  ###< doctrine/doctrine-bundle ###
+###< doctrine/doctrine-bundle ###
 
 ###> symfony/mercure-bundle ###
   mercure:
