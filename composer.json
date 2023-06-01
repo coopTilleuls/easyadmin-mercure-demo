@@ -16,7 +16,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-pgsql": "*",
-        "easycorp/easyadmin-bundle": "dev-slim",
+        "easycorp/easyadmin-bundle": "dev-feat/5765-mercure-integration",
         "league/commonmark": "^2.3",
         "symfony/asset": "6.3.*",
         "symfony/asset-mapper": "6.3.*",

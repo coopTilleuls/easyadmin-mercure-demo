@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d63b7ed432bfed6b672313c2c000f786",
+    "content-hash": "3dfaa7293204a043166835ea489a1c36",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -1205,16 +1205,16 @@
         },
         {
             "name": "easycorp/easyadmin-bundle",
-            "version": "dev-slim",
+            "version": "dev-feat/5765-mercure-integration",
             "source": {
                 "type": "git",
                 "url": "https://github.com/coopTilleuls/EasyAdminBundle.git",
-                "reference": "628623c691a1c4e12c617f9c5092a98c46c0fbfe"
+                "reference": "84490f73b1c9179a56121d0aa7f0ed3d7993904b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coopTilleuls/EasyAdminBundle/zipball/628623c691a1c4e12c617f9c5092a98c46c0fbfe",
-                "reference": "628623c691a1c4e12c617f9c5092a98c46c0fbfe",
+                "url": "https://api.github.com/repos/coopTilleuls/EasyAdminBundle/zipball/84490f73b1c9179a56121d0aa7f0ed3d7993904b",
+                "reference": "84490f73b1c9179a56121d0aa7f0ed3d7993904b",
                 "shasum": ""
             },
             "require": {
@@ -1255,7 +1255,7 @@
                 "symfony/css-selector": "^5.4|^6.0",
                 "symfony/debug-bundle": "^5.4|^6.0",
                 "symfony/dom-crawler": "^5.4|^6.0",
-                "symfony/mercure": "^0.6.3",
+                "symfony/mercure-bundle": "^0.3.7",
                 "symfony/phpunit-bridge": "^5.4|^6.0"
             },
             "suggest": {
@@ -1295,7 +1295,7 @@
                 "generator"
             ],
             "support": {
-                "source": "https://github.com/coopTilleuls/EasyAdminBundle/tree/slim"
+                "source": "https://github.com/coopTilleuls/EasyAdminBundle/tree/feat/5765-mercure-integration"
             },
             "funding": [
                 {
@@ -1303,7 +1303,7 @@
                     "url": "https://github.com/javiereguiluz"
                 }
             ],
-            "time": "2023-06-01T12:29:42+00:00"
+            "time": "2023-06-01T14:43:05+00:00"
         },
         {
             "name": "lcobucci/jwt",
