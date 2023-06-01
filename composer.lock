@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b68a5627cb43245c9ff60ba922fbf7df",
+    "content-hash": "d63b7ed432bfed6b672313c2c000f786",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -1209,12 +1209,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/coopTilleuls/EasyAdminBundle.git",
-                "reference": "d1430a503f11a8314a5c5dca387d1929daf4d9ab"
+                "reference": "628623c691a1c4e12c617f9c5092a98c46c0fbfe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/coopTilleuls/EasyAdminBundle/zipball/d1430a503f11a8314a5c5dca387d1929daf4d9ab",
-                "reference": "d1430a503f11a8314a5c5dca387d1929daf4d9ab",
+                "url": "https://api.github.com/repos/coopTilleuls/EasyAdminBundle/zipball/628623c691a1c4e12c617f9c5092a98c46c0fbfe",
+                "reference": "628623c691a1c4e12c617f9c5092a98c46c0fbfe",
                 "shasum": ""
             },
             "require": {
@@ -1303,7 +1303,7 @@
                     "url": "https://github.com/javiereguiluz"
                 }
             ],
-            "time": "2023-05-25T15:23:31+00:00"
+            "time": "2023-06-01T12:29:42+00:00"
         },
         {
             "name": "lcobucci/jwt",
@@ -9797,7 +9797,8 @@
     "platform": {
         "php": ">=8.1",
         "ext-ctype": "*",
-        "ext-iconv": "*"
+        "ext-iconv": "*",
+        "ext-pgsql": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"
