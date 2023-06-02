@@ -30,7 +30,7 @@ jobs:
     - name: Install Dependencies
       run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
     - name: Execute tests via PHPUnit
-      run: vendor/bin/simple-phpunit
+      run: make test
 
   # run all lint/cs checks (non critical)
   symfony-lint:
