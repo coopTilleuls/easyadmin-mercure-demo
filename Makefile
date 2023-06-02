@@ -1,24 +1,24 @@
 SHELL = sh
 .DEFAULT_GOAL = help
 
-## —— 🎶 The EasyAdmin+Mercure Makefile 🎶 ——————————————————————————————————————————
+## —— 🎶 The EasyAdmin+Mercure Makefile 🎶 —————————————————————————————————————
 help: ## Outputs this help screen
 	@grep -E '(^[a-zA-Z0-9_-]+:.*?##.*$$)|(^##)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}{printf "\033[32m%-30s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m##/[33m/'
 .PHONY: help start stop test coverage cov-report stan fix-php cs ci
 
 
 ## —— Symfony binary 💻 ————————————————————————————————————————————————————————
-start: ## Serve the application with the Symfony binary
+start: ## Starts Dockers services and serve the application with the Symfony binary
 	docker compose up --wait
 	$(MAKE) db-init
 	symfony serve --daemon --no-tls
 
-db-init: ## Initialize the database if
+db-init: ## Initialize the database
 	rm var/data.db
 	bin/console doctrine:schema:create
 	bin/console doctrine:schema:validate
 
-stop: ## Stop the web server
+stop: ## Stop docker services and the web server
 	docker compose down --remove-orphans
 	@symfony server:stop
 
