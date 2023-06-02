@@ -15,6 +15,7 @@
         "php": ">=8.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "ext-pdo_sqlite": "*",
         "ext-pgsql": "*",
         "easycorp/easyadmin-bundle": "dev-feat/5765-mercure-integration",
         "league/commonmark": "^2.3",

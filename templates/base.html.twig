@@ -11,20 +11,13 @@
         {% block preconnect %}{% endblock %}
 
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('barecss/css/bare.min.css') }}">
-            <link rel="stylesheet" href="{{ asset('barecss/css/style.min.css') }}">
-            {# tuning: integrate this barreccs #}
-            <style>
-                label.required:after {
-                    content: " *";
-                }
-                form > div > div > ul > li {
-                    color: red;
-                }
-            </style>
+            <link rel="stylesheet" href="{{ asset('vendor/barecss/css/bare.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('vendor/barecss/css/style.min.css') }}">
+            <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
         {% endblock %}
 
         {% block javascripts %}{% endblock %}
+        {{ importmap() }}
     </head>
 
     <body id="{% block id %}base{% endblock %}">
