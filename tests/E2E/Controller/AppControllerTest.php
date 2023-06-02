@@ -10,8 +10,10 @@ final class AppControllerTest extends E2ETestCase
 {
     public function testHome(): void
     {
-        $client = self::createPantherClient();
+        $client = self::createPantherClient([
+            'external_base_uri' => 'http://127.0.0.1:8000' // use the Symfony CLI
+        ]);
         $client->request('GET', '/');
-        self::assertSelectorTextContains('body', 'EasyAdmin+Mercure');
+        self::assertSelectorTextContains('body', 'EASYADMIN+MERCURE');
     }
 }
