@@ -12,20 +12,6 @@ This demo application has been generated from the [MicroSymfony](https://github.
 template.
 
 
-### Manual update
-
-You can also manually emit notifications in your application check out
-[AppController](./src/Controller/AppController.php):
-
-      $topic = $this->adminUrlGenerator->setController(Article::class)
-              ->unsetAllExcept('crudControllerFqcn')->generateUrl();
-      $update = new Update(
-          $topic,
-          (string) json_encode(['id' => 1]),
-      );
-
-Of course you should rely on an actual article instance in this case.
-
 
 ## Requirements
 
@@ -57,6 +43,20 @@ To reinitialize the database you can run:
 
     make stop
 
+
+### Manual update
+
+You can also manually emit notifications in your application check out
+[AppController](./src/Controller/AppController.php):
+
+      $topic = $this->adminUrlGenerator->setController(Article::class)
+              ->unsetAllExcept('crudControllerFqcn')->generateUrl();
+      $update = new Update(
+          $topic,
+          (string) json_encode(['id' => 1]),
+      );
+
+Of course you should rely on an actual article instance in this case.
 
 ## Todo
 
