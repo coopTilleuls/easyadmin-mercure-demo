@@ -14,7 +14,7 @@ start: ## Starts Dockers services and serve the application with the Symfony bin
 	symfony serve --daemon --no-tls
 
 db-init: ## Initialize the database
-	rm var/data.db
+	rm -f var/data.db
 	bin/console doctrine:schema:create
 	bin/console doctrine:schema:validate
 
