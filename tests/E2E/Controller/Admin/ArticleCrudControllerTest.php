@@ -21,7 +21,7 @@ final class ArticleCrudControllerTest extends E2ETestCase
 
         // 1st administrator connects
         $client = self::createPantherClient([
-            'external_base_uri' => 'http://127.0.0.1:8000' // use the Symfony CLI
+            'external_base_uri' => 'http://127.0.0.1:8000', // use the Symfony CLI
         ]);
 
         $client->request('GET', self::ARTICLE_LIST_URL);
