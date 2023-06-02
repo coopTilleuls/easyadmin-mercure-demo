@@ -14,8 +14,7 @@ start: ## Serve the application with the Symfony binary
 	symfony serve --daemon --no-tls
 
 db-init: ## Initialize the database if
-	bin/console doctrine:database:drop --if-exists --force
-	bin/console doctrine:database:create --if-not-exists
+	rm var/data.db
 	bin/console doctrine:schema:create
 	bin/console doctrine:schema:validate
 
