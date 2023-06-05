@@ -45,10 +45,10 @@ final class ArticleCrudControllerTest extends AbstractCrudTestCase
         $this->client->followRedirects();
 
         $this->client->submit($form, [
-            $form->getName().'[code]' => 'CDB145',
-            $form->getName().'[description]' => 'Chaise de bureau',
-            $form->getName().'[quantity]' => '10',
-            $form->getName().'[price]' => '50',
+            $form->getName().'[code]' => 'CDB141',
+            $form->getName().'[description]' => 'Chaise de bureau 1',
+            $form->getName().'[quantity]' => '11',
+            $form->getName().'[price]' => '51',
         ]);
         self::assertResponseIsSuccessful();
 
