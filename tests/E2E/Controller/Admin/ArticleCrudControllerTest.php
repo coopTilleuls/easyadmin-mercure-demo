@@ -43,7 +43,6 @@ final class ArticleCrudControllerTest extends E2ETestCase
         // 2nd administrator access the edit page of the same article and mofifies the quantity
         $client2 = self::createAdditionalPantherClient();
         $client2->request('GET', self::ARTICLE_EDIT_URL);
-        $client2->takeScreenshot('04.png');
         $client2->submitForm('Save changes', [
             'Article[code]' => 'CDB145',
             'Article[description]' => 'Chaise de bureau',

@@ -1,4 +1,4 @@
-name: Symfony
+name: Symfony 6.3 / PHP 8.1
 
 on:
   push:
@@ -13,6 +13,19 @@ jobs:
   # run tests (critical)
   symfony-tests:
     runs-on: ubuntu-latest
+    services:
+      mercure:
+        image: dunglas/mercure
+        env:
+          SERVER_NAME: ':80'
+          MERCURE_PUBLISHER_JWT_KEY: '!ChangeThisMercureHubJWTSecretKey!'
+          MERCURE_SUBSCRIBER_JWT_KEY: '!ChangeThisMercureHubJWTSecretKey!'
+          MERCURE_EXTRA_DIRECTIVES: |
+            cors_origins http://127.0.0.1:8000
+        # command: /usr/bin/caddy run --config /etc/caddy/Caddyfile.dev
+        ports:
+          - "50943:80"
+
     steps:
     - uses: shivammathur/setup-php@v2
       with:

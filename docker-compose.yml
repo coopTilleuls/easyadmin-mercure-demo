@@ -18,7 +18,7 @@ services:
       - mercure_data:/data
       - mercure_config:/config
     ports:
-      - "80"
+      - "50943:80"
 ###< symfony/mercure-bundle ###
 
 volumes:
