@@ -22,12 +22,10 @@ template.
 
 ## Installation & first run 🚀
 
-The `5432` port must be free for PostgreSQL.
-
     composer install
     make start
 
-Then open [https://127.0.0.1:8000](https://127.0.0.1:8000)
+Then open [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 The port can change if `8000` is already used.
 
@@ -67,9 +65,11 @@ Of course you should rely on an actual article instance in this case.
 ## Stack 🔗
 
 * [Symfony 6.3](https://symfony.com)
+* [EasyAdminBundle 4.x](https://github.com/EasyCorp/EasyAdminBundle)
+* [Mercure](https://mercure.rocks/)
+* [Panther](https://github.com/symfony/panther#creating-isolated-browsers-to-test-apps-using-mercure-or-websocket)
 * [Twig 3](https://twig.symfony.com)
 * [PHPUnit 9.5](https://phpunit.de)
-* The classless [BareCSS](http://barecss.com) CSS framework 
 
 
 ## Dev-tools ✨
