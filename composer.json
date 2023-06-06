@@ -16,7 +16,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-pdo_sqlite": "*",
-        "ext-pgsql": "*",
+        "ext-zip": "*",
         "easycorp/easyadmin-bundle": "dev-feat/5765-mercure-integration",
         "league/commonmark": "^2.3",
         "symfony/asset": "6.3.*",
