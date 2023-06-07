@@ -1,4 +1,4 @@
-# EasyAdmin / Mercure demo
+# EasyAdmin/Mercure demo
 
 ## Features
 
@@ -12,7 +12,6 @@ This demo application has been generated from the [MicroSymfony](https://github.
 template.
 
 
-
 ## Requirements
 
 * Docker
@@ -22,12 +21,12 @@ template.
 
 ## Installation & first run 🚀
 
+Your 8000 and 50943 ports must be free for the Symfony CLI web server and Mercure.
+
     composer install
     make start
 
 Then open [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
-
-The port can change if `8000` is already used.
 
 
 ## Reset
@@ -35,6 +34,13 @@ The port can change if `8000` is already used.
 To reinitialize the database you can run:
 
     make db-init
+
+
+## Run the tests
+
+To check the PHPUnit tests, you can run: 
+
+    make test
 
 
 ## Stop the Docker containers and the Symfony web server
@@ -62,17 +68,15 @@ Of course you should rely on an actual article instance in this case.
 ## To try/test
 
 
-## Stack 🔗
+## Stack
 
 * [Symfony 6.3](https://symfony.com)
 * [EasyAdminBundle 4.x](https://github.com/EasyCorp/EasyAdminBundle)
 * [Mercure](https://mercure.rocks/)
 * [Panther](https://github.com/symfony/panther#creating-isolated-browsers-to-test-apps-using-mercure-or-websocket)
-* [Twig 3](https://twig.symfony.com)
-* [PHPUnit 9.5](https://phpunit.de)
 
 
-## Dev-tools ✨
+## Dev-tools
  
 * php-cs-fixer with the [Symfony ruleset and PHP strict types](https://github.com/strangebuzz/MicroSymfony/blob/main/.php-cs-fixer.dist.php)
 * PHPStan at [maximum level](https://github.com/strangebuzz/MicroSymfony/blob/main/phpstan.neon)
