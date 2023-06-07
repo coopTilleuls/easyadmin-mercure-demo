@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Tests\E2E\Controller\Admin;
 
+use Facebook\WebDriver\Exception\NoSuchElementException;
+use Facebook\WebDriver\Exception\TimeoutException;
 use Symfony\Component\Panther\PantherTestCase as E2ETestCase;
 
 /**
@@ -11,20 +13,28 @@ use Symfony\Component\Panther\PantherTestCase as E2ETestCase;
  */
 final class ArticleCrudControllerTest extends E2ETestCase
 {
-    private const ARTICLE_LIST_URL = '/admin?crudAction=index&crudControllerFqcn=App%5CController%5CAdmin%5CArticleCrudController';
+    private const SYMFONY_SERVER_URL = 'http://127.0.0.1:8000'; // Use the Symfony CLI local web server
+
+    private const ARTICLE_LIST_URL = '/admin?crudAction=index&crudControllerFqcn=App\Controller\Admin\ArticleCrudController';
 
     // this is the second article as we created the first one in the AdminCrud test
     private const ARTICLE_EDIT_URL = '/admin?crudAction=edit&crudControllerFqcn=App\Controller\Admin\ArticleCrudController&entityId=2';
 
+    private const ARTICLE_NEW_URL = '/admin?crudAction=new&crudControllerFqcn=App\Controller\Admin\ArticleCrudController';
+
     private const NOTIFICATION_SELECTOR = '#conflict_notification';
 
+    /**
+     * @throws NoSuchElementException
+     * @throws TimeoutException
+     */
     public function testMercureNotification(): void
     {
         $this->takeScreenshotIfTestFailed();
 
         // 1st administrator connects
         $client = self::createPantherClient([
-            'external_base_uri' => 'http://127.0.0.1:8000', // use the Symfony CLI
+            'external_base_uri' => self::SYMFONY_SERVER_URL,
         ]);
 
         $client->request('GET', self::ARTICLE_LIST_URL);
@@ -32,7 +42,7 @@ final class ArticleCrudControllerTest extends E2ETestCase
         self::assertSelectorTextContains('body', 'Add Article');
 
         // 1st administrator creates an article
-        $client->request('GET', '/admin?crudAction=new&crudControllerFqcn=App\Controller\Admin\ArticleCrudController');
+        $client->request('GET', self::ARTICLE_NEW_URL);
         $client->submitForm('Create', [
             'Article[code]' => 'CDB142',
             'Article[description]' => 'Chaise de bureau 2',
@@ -40,13 +50,13 @@ final class ArticleCrudControllerTest extends E2ETestCase
             'Article[price]' => '50',
         ]);
 
-        // 1st admin access the edit page of the article he juste created
+        // 1st admin access the edit page of the article he just created
         $client->request('GET', self::ARTICLE_EDIT_URL);
 
         self::assertSelectorTextContains('body', 'Save changes');
         // self::assertSelectorIsNotVisible(self::NOTIFICATION_SELECTOR); // does not work on CI
 
-        // 2nd administrator access the edit page of the same article and mofifies the quantity
+        // 2nd administrator access the edit page of the same article and modifies the quantity
         $client2 = self::createAdditionalPantherClient();
         $client2->request('GET', self::ARTICLE_EDIT_URL);
         $client2->submitForm('Save changes', [
@@ -55,8 +65,9 @@ final class ArticleCrudControllerTest extends E2ETestCase
 
         // 1st admin has a notification thanks to Mercure and is invited to reload the page
         $client->waitForVisibility(self::NOTIFICATION_SELECTOR);
+
         self::assertSelectorIsVisible(self::NOTIFICATION_SELECTOR);
-        self::assertSelectorTextContains('#conflict_notification', 'The data displayed is outdated');
-        self::assertSelectorTextContains('#conflict_notification', 'Reload');
+        self::assertSelectorTextContains(self::NOTIFICATION_SELECTOR, 'The data displayed is outdated');
+        self::assertSelectorTextContains(self::NOTIFICATION_SELECTOR, 'Reload');
     }
 }
