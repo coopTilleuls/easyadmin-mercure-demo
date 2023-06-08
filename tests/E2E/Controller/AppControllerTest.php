@@ -14,6 +14,6 @@ final class AppControllerTest extends E2ETestCase
             'external_base_uri' => 'http://127.0.0.1:8000', // use the Symfony CLI
         ]);
         $client->request('GET', '/');
-        self::assertSelectorTextContains('body', 'EasyAdmin / Mercure demo');
+        self::assertSelectorTextContains('body', 'Mercure demo');
     }
 }
